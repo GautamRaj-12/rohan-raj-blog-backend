@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const app = express();
 const multer = require('multer');
 const path = require('path');
+const cors = require('cors');
 
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
@@ -12,6 +13,11 @@ const categoryRoute = require('./routes/categories');
 
 dotenv.config();
 app.use(express.json());
+app.use(
+  cors({
+    origin: 'https://rohanblogs.onrender.com/',
+  })
+);
 
 app.use('/images', express.static(path.join(__dirname, '/images')));
 
