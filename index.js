@@ -15,7 +15,7 @@ dotenv.config();
 app.use(express.json());
 app.use(
   cors({
-    origin: 'https://rohanblogs.onrender.com/',
+    origin: 'https://rohanblogs.onrender.com',
   })
 );
 
